@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 class Shape(ABC):
 
     @abstractmethod
-    def setvalues(self):
+    def set_values(self):
         pass
 
     @abstractmethod
