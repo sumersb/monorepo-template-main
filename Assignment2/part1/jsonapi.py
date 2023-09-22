@@ -3,7 +3,13 @@ from typing import Any
 
 
 class BetterEncoder(json.JSONEncoder):
+    """
+    Child Class of JSONEncoder which allows you to convert complex numbers and ranges to JSON
+    """
     def default(self, o: Any) -> Any:
+        """
+        takes in o and check if name is found in class otherwise passes it to parent class
+        """
         name = type(o).__name__
         try:
             encoder = getattr(self, f"encode_{name}")
@@ -21,10 +27,16 @@ class BetterEncoder(json.JSONEncoder):
 
 
 def dumps(obj, *args, **kwargs):
+    """ 
+    Allows obj to be passed in and converted to JSON 
+    """
     return json.dumps(obj, cls=BetterEncoder, *args, **kwargs)
 
 
 class BetterDecoder(json.JSONDecoder):
+    """
+    Child of JSONDecoder Takes in JSON object and is capable of converting complex and range objects as well
+    """
     def __init__(self, **kwargs):
         kwargs["object_hook"] = self.object_hook
         super().__init__(**kwargs)
@@ -46,4 +58,7 @@ class BetterDecoder(json.JSONDecoder):
 
 
 def loads(obj, *args, **kwargs):
+    """ 
+    Allows JSON obj to be passed in and converted to python objects including range and complex 
+    """
     return json.loads(obj, cls=BetterDecoder, *args, **kwargs)

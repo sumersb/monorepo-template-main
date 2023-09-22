@@ -5,6 +5,9 @@ import unittest
 class TestJsonAPI(unittest.TestCase):
 
     def test_dumps(self):
+        """
+        Testing the conversion of objects to JSON
+        """
         self.assertEqual(dumps(complex(1, 2)),
                          '{"real": 1.0, "imag": 2.0, "__extended_json_type__": "complex"}'
                          )
@@ -16,6 +19,9 @@ class TestJsonAPI(unittest.TestCase):
                          '{"name": "Alice", "age": {"real": 1.0, "imag": 2.0, "__extended_json_type__": "complex"}, "city": "Anytown"}')
 
     def test_loads(self):
+        """
+        Testing the conversion of JSON objects to python objects
+        """
         self.assertEqual(loads('{"real": 1.0, "imag": 2.0, "__extended_json_type__": "complex"}'),
                          complex(1, 2)
                          )
@@ -27,6 +33,9 @@ class TestJsonAPI(unittest.TestCase):
         self.assertEqual(loads('{"name": "Alice", "age": {"real": 1.0, "imag": 2.0, "__extended_json_type__": "complex"}, "city": "Anytown"}'),
                          {"name": "Alice", "age": complex(1, 2), "city": "Anytown"})
 
+
+if __name__ == '__main__':
+    unittest.main()
 
 if __name__ == '__main__':
     unittest.main()
