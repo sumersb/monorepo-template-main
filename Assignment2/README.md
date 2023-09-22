@@ -1,13 +1,17 @@
 # TODO Please edit the following information in your assignment
 
-- Name:
+- Name:Sumer Bal
 - How many hours did it take you to complete this assignment?
+- 15
 - Did you collaborate with any other students/TAs/Professors?
+- No
 - Did you use any external resources? (Cite them below)
-  - tbd
+  - I used chatgpt to troubleshoot some issues with the tests I had in python package
   - tbd
 - (Optional) What was your favorite part of the assignment?
+- The part where I knew what I was doing, so none of it
 - (Optional) How would you improve the assignment?
+- I would do more background research before starting
 
 # Implementation Logistics
 
