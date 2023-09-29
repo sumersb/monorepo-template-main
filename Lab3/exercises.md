@@ -6,9 +6,9 @@ Update your answers to the following questions, make sure to commit this file an
 ## Task 1 - oop.py
 
 1. Is MObject an abstract or a concrete class? Explain why:
-	- *edit your response*
+	- It is a concrete class because it does not inherit from "ABC" 
 1. The 'Image' class has commented code for a `__del__` method. What does this commented-out method do?
-	- *edit your response*
+	- It deconstructs the instantiated object it basically deletes that instance of the object
 1. What class does Texture inherit from?
 	- Texture inherits from the image class
 1. What methods and attributes does the Texture class inherit from 'Image'? 
