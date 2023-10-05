@@ -6,31 +6,35 @@
 
 <hr>
 
-**Use Case**: *use-case-title*
+**Use Case**: Color Toggle
 
-**Primary Actor**: *primary-actor*
+**Primary Actor**: User
 
-**Goal in Context**: *the aim of the primary-actor in a particular circumstance*
+**Goal in Context**: A means to quickly toggle to the color you want without having to move the mouse
 
-**Preconditions**: *conditions that must be true before the scenario may play out*
+**Preconditions**: Program must be running and stable
 
-**Trigger**: *an action or actions that initiate the scenario*
+**Trigger**: The user presses a key to change the color or this can be done through a color selection panel
   
-**Scenario**: *an enumerated list of steps describing the actions and interactions of the primary actor with the system*
+**Scenario**: 
+    Scenario 1 : The user presses a number key 1-8 to quickly toggle through color
+    Scenario 2 : The user has the option to move his mouse to a color selector and clicks on the color he wants
  
-**Exceptions**: *errors or faults that may occur during the scenario. Should include remedy/corrective action taken by the primary actor*
+**Exceptions**: Accidental press of the key causes a change in color when undesired in which case the user can erase what he has done and toggle back to desired color
 
-**Priority**: *relative importance of this use case compared to other use cases*
+**Priority**: Medium-Priority
 
-**When available**: *the targeted release that covers this use case*
+**When available**: On release
 
-**Channel to actor**: *the means through which the primary actor and the system communicate*
+**Channel to actor**: The primary actor communicates through I/O devices. This includes the keyboard and the mouse. The system is responsible for shifting the color when the user clicks from the color option or when they press a key and toggles the color, The program should change the color within 0.2 seconds . The user is responsible for all other input.
 
-**Secondary Actor**: *any other actors – people or systems – that may be involved in the scenario*
 
-**Channels to Secondary Actors**: *the means through which any secondary actors may interact with the system or other actors*
 
-**Open Issues**: *notes, concerns, or other materials*
+**Secondary Actor**: N/A
+
+**Channels to Secondary Actors**: N/A
+
+**Open Issues**: Accidental presses of color causing the user to draw might require a means to erase the song
 
 <hr>
 
