@@ -6,31 +6,32 @@
 
 <hr>
 
-**Use Case**: *use-case-title*
+**Use Case**: Window Size
 
-**Primary Actor**: *primary-actor*
 
-**Goal in Context**: *the aim of the primary-actor in a particular circumstance*
+**Primary Actor**: User
 
-**Preconditions**: *conditions that must be true before the scenario may play out*
+**Goal in Context**: Able to view the size of the window in a 600x400 format
 
-**Trigger**: *an action or actions that initiate the scenario*
+**Preconditions**: Program must be running
+
+**Trigger**: Starting the program
   
-**Scenario**: *an enumerated list of steps describing the actions and interactions of the primary actor with the system*
+**Scenario**: The user starts the program and a 600x400 window pops up
  
-**Exceptions**: *errors or faults that may occur during the scenario. Should include remedy/corrective action taken by the primary actor*
+**Exceptions**:Program should be constantly in 600x400 until closed, an exception might be that the program becomes unresponsive and unable to close
 
-**Priority**: *relative importance of this use case compared to other use cases*
+**Priority**: High-Priority
 
-**When available**: *the targeted release that covers this use case*
+**When available**: First release
 
-**Channel to actor**: *the means through which the primary actor and the system communicate*
+**Channel to actor**: The user or primary actor is capable of seeing the paint program in a 600x400 window
 
-**Secondary Actor**: *any other actors – people or systems – that may be involved in the scenario*
+**Secondary Actor**: N/A
 
-**Channels to Secondary Actors**: *the means through which any secondary actors may interact with the system or other actors*
+**Channels to Secondary Actors**: N/A
 
-**Open Issues**: *notes, concerns, or other materials*
+**Open Issues**: We might want to allow users to adjust the size of the window
 
 <hr>
 
