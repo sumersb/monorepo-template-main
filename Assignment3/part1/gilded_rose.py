@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-
 class Item:
     """ DO NOT CHANGE THIS CLASS!!!"""
     def __init__(self, name, sell_in, quality):
@@ -11,39 +9,65 @@ class Item:
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
 
+class AgedBrie(Item):
+
+    def update_quality(self):
+        self.sell_in-=1
+        self.quality += 1 if self.sell_in >=0 else 2
+        self.quality = min(50, max(self.quality,0))
+
+
+class Sulfuras(Item):
+
+    def update_quality(self):
+        self.sell_in-=1
+        
+
+class BackStagePasses(Item):
+    
+    def update_quality(self):
+        self.sell_in-=1
+        if self.sell_in > 10:
+            self.quality += 1
+        elif self.sell_in > 5:
+            self.quality += 2
+        elif self.sell_in > 0:
+            self.quality += 3
+        else:
+            self.quality = float("-inf")
+        
+        self.quality = min(50, max(self.quality,0))
+
+class Sulfuras(Item):
+
+    def update_quality(self):
+        self.sell_in-=1 
+
+class Ordinary(Item):
+
+    def update_quality(self):
+        self.sell_in-=1
+        self.quality -= 1 if self.sell_in>=0 else 2
+        self.quality = min(50, self.quality)
 
 class GildedRose(object):
+
+    __itemDic = {
+        "Aged Brie" : AgedBrie,
+        "Backstage passes to a TAFKAL80ETC concert" : BackStagePasses,
+        "Sulfuras, Hand of Ragnaros" : Sulfuras,
+    }
 
     def __init__(self, items: list[Item]):
         # DO NOT CHANGE THIS ATTRIBUTE!!!
         self.items = items
+        self.__processItem()
 
+    def __processItem(self):
+        for i in range(len(self.items)):
+            item=self.items[i]
+            self.items[i] = self.__itemDic.get(item.name,Ordinary)(item.name,item.sell_in,item.quality)
+    
     def update_quality(self):
         for item in self.items:
-            if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
-                if item.quality > 0:
-                    if item.name != "Sulfuras, Hand of Ragnaros":
-                        item.quality = item.quality - 1
-            else:
-                if item.quality < 50:
-                    item.quality = item.quality + 1
-                    if item.name == "Backstage passes to a TAFKAL80ETC concert":
-                        if item.sell_in < 11:
-                            if item.quality < 50:
-                                item.quality = item.quality + 1
-                        if item.sell_in < 6:
-                            if item.quality < 50:
-                                item.quality = item.quality + 1
-            if item.name != "Sulfuras, Hand of Ragnaros":
-                item.sell_in = item.sell_in - 1
-            if item.sell_in < 0:
-                if item.name != "Aged Brie":
-                    if item.name != "Backstage passes to a TAFKAL80ETC concert":
-                        if item.quality > 0:
-                            if item.name != "Sulfuras, Hand of Ragnaros":
-                                item.quality = item.quality - 1
-                    else:
-                        item.quality = item.quality - item.quality
-                else:
-                    if item.quality < 50:
-                        item.quality = item.quality + 1
+            item.update_quality()
