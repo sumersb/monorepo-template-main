@@ -51,6 +51,17 @@ class GildedRoseTest(unittest.TestCase):
         for i in range(100):
             gilded_rose.update_quality()
         self.assertEqual(50,items[0].quality)
+
+    def test_Conjured(self):
+        items = [Item("Conjured Mana Cake", 2 ,20)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(18,items[0].quality)
+        gilded_rose.update_quality()
+        self.assertEquals(16,items[0].quality)
+        gilded_rose.update_quality()
+        self.assertEquals(12,items[0].quality)
+    
     
     def test_Ordinary(self):
         items = [Item("Drug", 2 ,20)]

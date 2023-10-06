@@ -43,6 +43,13 @@ class Sulfuras(Item):
     def update_quality(self):
         self.sell_in-=1 
 
+class Conjured(Item):
+
+    def update_quality(self):
+        self.sell_in-=1
+        self.quality -= 2 if self.sell_in>=0 else 4
+        self.quality = min(50, self.quality)
+
 class Ordinary(Item):
 
     def update_quality(self):
@@ -55,6 +62,7 @@ class GildedRose(object):
     __itemDic = {
         "Aged Brie" : AgedBrie,
         "Backstage passes to a TAFKAL80ETC concert" : BackStagePasses,
+        "Conjured Mana Cake" : Conjured,
         "Sulfuras, Hand of Ragnaros" : Sulfuras,
     }
 
