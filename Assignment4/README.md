@@ -1,9 +1,9 @@
 # TODO Please edit the following information in your assignment
 
-- Name:
-- How many hours did it take you to complete this assignment?
-- Did you collaborate with any other students/TAs/Professors?
-- Did you use any external resources? (Cite them below)
+- Name: Sumer Bal
+- How many hours did it take you to complete this assignment? 1
+- Did you collaborate with any other students/TAs/Professors? Nope
+- Did you use any external resources? (Cite them below) Nope
   - tbd
   - tbd
 - (Optional) What was your favorite part of the assignment?
