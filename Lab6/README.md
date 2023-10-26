@@ -53,3 +53,5 @@ You (and any partner(s)) will receive the same grade from a scale of 0-2. Both p
 - 0 for no work completed by the deadline
 - 1 for some work completed, but something is not working properly
 - 2 for a completed lab (with possible 'going further' options completed)
+
+I did use online sources to help me figure out how to test
